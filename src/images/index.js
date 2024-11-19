@@ -1,0 +1,1 @@
+export { default as userUnknow } from './desconocido.png'
