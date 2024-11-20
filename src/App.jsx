@@ -52,7 +52,6 @@ function App() {
     })
   }
 
-
   //handlerOpenModal
   const openAdd = () => {
     setIsOpen(true);
@@ -66,7 +65,7 @@ function App() {
 
   const openDelete = (user) => {
     setIsOpen(true);
-    setCurrentChild(<Confirm user ={user}/>)
+    setCurrentChild(<Confirm user ={user} deleteUser={deleteUser} setIsOpen={setIsOpen}/>)
   }
 
   return (
