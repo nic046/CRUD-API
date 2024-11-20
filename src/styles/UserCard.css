@@ -46,10 +46,12 @@
   justify-content: center;
 }
 .card__label {
-  display: block;
+  display: flex;
   text-transform: uppercase;
   color: #1b1a1a;
   font-size: medium;
+  align-items: start;
+  justify-content: start;
 }
 .card__data {
   display: flex;
