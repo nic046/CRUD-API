@@ -5,14 +5,22 @@ import { FaEdit } from "react-icons/fa";
 import "../styles/UserCard.css";
 import userUnknow from "../images/desconocido.png";
 
-export default function UserCard({ user, openEdit, deleteUser }) {
+export default function UserCard({ user, openEdit, openDelete }) {
   return (
     <div className="card">
       <div className="card__header">
-        <img className="card__img" width={50} src={user?.image_url ? user.image_url : userUnknow}  alt="user image" />
-        <h3 className="card__name"> {user?.first_name} {user?.last_name}</h3>
+        <img
+          className="card__img"
+          width={50}
+          src={user?.image_url ? user.image_url : userUnknow}
+          alt="user image"
+        />
+        <h3 className="card__name">
+          {" "}
+          {user?.first_name} {user?.last_name}
+        </h3>
       </div>
-      
+
       <div className="card__info">
         <div>
           <span className="card__label">Correo: </span>
@@ -23,7 +31,12 @@ export default function UserCard({ user, openEdit, deleteUser }) {
         <div>
           <span className="card__label">Cumpleaños: </span>
           <span className="card__data">
-            <CiGift className="icon--gift" /> {user?.birthday}
+            <CiGift className="icon--gift" />{" "}
+            {new Date(user?.birthday).toLocaleDateString("es-ES", {
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            })}
           </span>
         </div>
       </div>
@@ -39,7 +52,7 @@ export default function UserCard({ user, openEdit, deleteUser }) {
         <button
           className="btn btn--erase"
           onClick={() => {
-            deleteUser(user?.id);
+            openDelete(user);
           }}
         >
           <MdDelete />

@@ -48,6 +48,9 @@ export default function AddEdit({ user, onSave }) {
         else if (dataForm.image_url === "cat")
             dataForm.image_url = `https://robohash.org/${dataForm.first_name}-${dataForm.last_name}?set=set4`;
     }
+    if(!dataForm.birthday){
+        dataForm.birthday = "2000-01-01"
+    }
     if (user) {
       onSave(dataForm, user.id);
     } else {

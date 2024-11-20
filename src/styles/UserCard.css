@@ -1,6 +1,6 @@
 .card {
   border: 1px solid #ccc;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #a18cd14a, #fbc2eb3d);
   padding: 1.25em;
   display: flex;
   flex-direction: column;
@@ -9,13 +9,18 @@
   transition: scale;
   transition: scale 0.4s ease-in-out;
   &:hover {
-    scale: 1.1;
+    scale: 1.05;
   }
 }
 .card__header {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #ccc;
+  background: linear-gradient(30deg, #bea5b1d2, #ca96c2);
+  color: #fff;
+  padding: 1em;
+  border-radius: 8px 8px 0 0;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 .card__name {
   padding-bottom: 0.25em;
@@ -43,7 +48,7 @@
 .card__label {
   display: block;
   text-transform: uppercase;
-  color: #aaa;
+  color: #1b1a1a;
   font-size: medium;
 }
 .card__data {
@@ -52,10 +57,13 @@
   gap: 0.5em;
 }
 .icon--mail {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: #42a5f5;
+  
 }
 .icon--gift {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  color: #ff4101;
 }
 
 .btn {
@@ -85,4 +93,12 @@
     background-color: #3556ff;
     color: #ccecfb;
   }
+}
+
+.form__error {
+  color: #ff2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: smaller;
 }

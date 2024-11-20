@@ -5,6 +5,8 @@ import Layout from "./layouts/Layout";
 import AddEdit from "./components/AddEdit";
 import UserList from "./components/UserList";
 import Modal from "./components/Modal";
+import Loader from "./components/Loader";
+import Confirm from "./components/Confirm";
 
 const baseUrl = "https://users-crud-api-81io.onrender.com/api/v1";
 
@@ -62,6 +64,11 @@ function App() {
     setCurrentChild(<AddEdit user={user} onSave={updateUser}/>);
   };
 
+  const openDelete = (user) => {
+    setIsOpen(true);
+    setCurrentChild(<Confirm user ={user}/>)
+  }
+
   return (
     <Layout>
       <header className="header">
@@ -81,9 +88,9 @@ function App() {
 
       <main className="container">
         {loading ? (
-          <h2>Cargando...</h2>
+          <Loader/>
         ) : (
-          <UserList users={users} openEdit={openEdit} deleteUser={deleteUser}/>
+          <UserList users={users} openEdit={openEdit} openDelete={openDelete}/>
         )}
       </main>
     </Layout>
